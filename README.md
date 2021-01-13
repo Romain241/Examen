@@ -3,7 +3,7 @@
 ### Nombre de formages par régions en France:
 
 Cette représentation permet de voir le nombre de formages par régions en France. Ce graphique utilise le jeu de données qui réunit la liste de 338 formages en France. Ce jeu de données vient d'une page Wikipédia ( Liste des spécialités régionales française de formages). 
-Lien de la page Wikipédia :(https://fr.wikipedia.org/wiki/Liste_des_spécialités_régionales_françaises_de_fromages).
+Lien de la page Wikipédia :([https://fr.wikipedia.org/wiki/Liste_des_spécialités_régionales_françaises_de_fromages]).
 
 <iframe src="https://data.opendatasoft.com/explore/embed/dataset/fromagescsv-fromagescsv@public/analyze/?disjunctive.fromage&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6ImZyb21hZ2VzY3N2LWZyb21hZ2VzY3N2QHB1YmxpYyIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUuZnJvbWFnZSI6dHJ1ZX19LCJjaGFydHMiOlt7ImFsaWduTW9udGgiOnRydWUsInR5cGUiOiJjb2x1bW4iLCJmdW5jIjoiQ09VTlQiLCJzY2llbnRpZmljRGlzcGxheSI6dHJ1ZSwiY29sb3IiOiIjMDA4NkQ2In1dLCJ4QXhpcyI6ImRlcGFydGVtZW50IiwibWF4cG9pbnRzIjo1MCwic29ydCI6IiJ9XSwidGltZXNjYWxlIjoiIiwiZGlzcGxheUxlZ2VuZCI6dHJ1ZSwiYWxpZ25Nb250aCI6dHJ1ZX0%3D&static=false&datasetcard=false" width="700" height="500" frameborder="0"></iframe>
 
