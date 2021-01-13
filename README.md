@@ -11,11 +11,11 @@ Dans cette représentation, on peut voir que le département de l'Ain à plus de
 
 ### Le type de lait utilisé dans la réalisation des formages en France:
 
-Cette représentation permet de voir le type de lait utilisé dans la créaction de formage en France. Pour voir les différents types de lait, on a utiliser le même jeu de données que l'étude précedent.
+Cette représentation permet de voir le type de lait utilisé dans la créaction de formage en France. Pour voir les différents types de lait, on a utiliser le même jeu de données que l'étude précedent. Cette représentation est un Treemap.
 
 <iframe src="https://data.opendatasoft.com/explore/embed/dataset/fromagescsv-fromagescsv@public/analyze/?disjunctive.fromage&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6ImZyb21hZ2VzY3N2LWZyb21hZ2VzY3N2QHB1YmxpYyIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUuZnJvbWFnZSI6dHJ1ZX19LCJjaGFydHMiOlt7ImFsaWduTW9udGgiOnRydWUsInR5cGUiOiJ0cmVlbWFwIiwiZnVuYyI6IkNPVU5UIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoicmFuZ2UtY3VzdG9tIiwicG9zaXRpb24iOiJjZW50ZXIifV0sInhBeGlzIjoibGFpdCIsIm1heHBvaW50cyI6NTAsInNvcnQiOiIiLCJzZXJpZXNCcmVha2Rvd24iOiIiLCJzZXJpZXNCcmVha2Rvd25UaW1lc2NhbGUiOiIifV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9&static=false&datasetcard=false" width="800" height="600" frameborder="0"></iframe>
 
-On peut dit que sur 338 formages, 
+On peut dit que sur 338 formages, 243 des formages sont réalisé par du lait de Vache, 61 sont réalisé avec du lait de Chèvre, 34 avec du lait de Brebis.
 
 ## Welcome to GitHub Pages
 
