@@ -17,6 +17,17 @@ Cette représentation permet de voir le type de lait utilisé dans la créaction
 
 On peut dit que sur 338 fromages, 243 des fromages sont réalisé par du lait de Vache, 61 sont réalisé avec du lait de Chèvre, 34 avec du lait de Brebis.
 
+Exercice : 
+
+select DISTINCT ?peinture ?peintureLabel ?lieux ?lieuxLabel
+where {
+ ?peinture wdt:P170 wd:Q296.
+ ?peinture wdt:P195 ?lieux.
+SERVICE wikibase:label { #pour récuéprer les labels
+bd:serviceParam wikibase:language "fr,en"}
+}
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Romain241/Examen/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
