@@ -21,17 +21,19 @@ On peut dit que sur 338 fromages, 243 des fromages sont réalisé par du lait de
 
 ## les peintures de Claude Monet : 
 
-`select DISTINCT ?peinture 
+```
+select DISTINCT ?peinture 
 where {
  ?peinture wdt:P170 wd:Q296.
 
 SERVICE wikibase:label { #pour récuéprer les labels
 bd:serviceParam wikibase:language "fr,en"}
-}`
-
+}
+```
 ## Avec les labels (via le service wikibase:label) et les images associées :
 
-`select DISTINCT ?peinture ?peintureLabel ?img 
+```
+select DISTINCT ?peinture ?peintureLabel ?img 
 where {
  ?peinture wdt:P170 wd:Q296.
  ?peinture wdt:P18 ?img.
@@ -39,11 +41,13 @@ where {
   
 SERVICE wikibase:label { #pour récuéprer les labels
 bd:serviceParam wikibase:language "fr,en"}
-}`
+}
+```
 
 ## Avec en option (via OPTIONAL) les collections/lieux de conservation : 
 
-`select DISTINCT ?peinture ?peintureLabel ?img ?lieux ?lieuxLabel
+```
+select DISTINCT ?peinture ?peintureLabel ?img ?lieux ?lieuxLabel
 where {
  ?peinture wdt:P170 wd:Q296.
  ?peinture wdt:P18 ?img.
@@ -52,7 +56,8 @@ OPTIONAL {?peinture wdt:P195 ?lieux
   
 SERVICE wikibase:label { #pour récuéprer les labels
 bd:serviceParam wikibase:language "fr,en"}
-}`
+}
+```
 
 _________________________________________________________________________________________________________________________________________________________________________________
 
