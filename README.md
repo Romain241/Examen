@@ -6,7 +6,7 @@ Le premier jeu de données correspond aux grands documents et images de l'histoi
 
 ## Grands documents et images de l'histoire de France conservés par les Archives nationales : 
 
-<iframe src="https://data.culture.gouv.fr/explore/embed/dataset/grands-documents-et-images-de-lhistoire-de-france-conserves-par-les-archives-/table/?&static=false&datasetcard=false" width="800" height="300" frameborder="0"></iframe>
+<iframe src="https://data.culture.gouv.fr/explore/embed/dataset/grands-documents-et-images-de-lhistoire-de-france-conserves-par-les-archives-/table/?&static=false&datasetcard=false" width="500" height="300" frameborder="0"></iframe>
 
 
 ##  Test sur le  github de plusieurs visualisation de données : 
