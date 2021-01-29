@@ -1,6 +1,6 @@
-# Réalisation d'une datavisualisation des Archives Nationale pour le partiel de dataviz :
+# Réalisation d'une datavisualisation en lien avec la politique Américaine pour le partiel de dataviz :
 
-Pour réaliser cela, j'ai utilisé un jeux de données qui vient des jeux de données du ministère de la culture. Ce jeux de données sont des données liées aux Archives Nationale de France. 
+Pour réaliser cela, j'ai utilisé un jeux de données peut-être un deuxième qui vient d'une requête de wikidata avec quelles lignes en plus pour avoir d'analyse sur le jeu de données de wikidata . Ce jeux de données sont des données liées à la politique américaine et plus particulièrement au 117th congress des Etats-Unis d'Amérique après l'élection à la président des Etats-Unis . 
 
 Le premier jeu de données correspond aux grands documents et images de l'histoire de France conservés par les Archives nationales. 
 
