@@ -44,6 +44,8 @@ Cependant, j'ai utilisé ce jeu de données pour montrer des choses comme par ex
 <div class="flourish-embed flourish-hierarchy" data-src="visualisation/4874708"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 
+
+
 ##  Test sur le  github de plusieurs visualisation de données : 
 
 ### Nombre de fromages par régions en France:
