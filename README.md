@@ -39,11 +39,16 @@ Là on est dans la première étapes qui est la saisie de données. Puis j'ai ut
 Cette visualisation, permet de voir les présidents américains, leurs dates de naissance, leurs lieux de naissance, ... 
 Source du jeux de données : wikidata 
 
-Cependant, j'ai utilisé ce jeu de données pour montrer des choses comme par exemple là dans cette visualisation. Ou je montre qu'il y a eu plus de présidents républicains que démoncrates dans l'histoire des Etats-Unis. 19 présidents républicains contre 16 présidents démoncrates 
+Cependant, j'ai utilisé ce jeu de données pour montrer des choses comme par exemple là dans cette visualisation. Ou je montre qu'il y a eu plus de présidents républicains que démoncrates dans l'histoire des Etats-Unis. 19 présidents républicains contre 16 présidents démoncrates. On peux voir un filtre qui nous permet de savoir combien de président sont originaire d'un Etat des Etats-Unis.
 
 
 <div class="flourish-embed flourish-hierarchy" data-src="visualisation/4874708"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
+
+# Nouveau jeu de données, toujours sur la politique Américaine, le 117th congress des Etats-Unis.
+
+
+![Image du congress américian](https://upload.wikimedia.org/wikipedia/commons/b/b5/2019_State_of_the_Union_%2840042020903%29_%28cropped%29.jpg)
 
 
 
