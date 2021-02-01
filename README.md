@@ -41,6 +41,7 @@ Source du jeux de données : wikidata
 
 Cependant, j'ai utilisé ce jeu de données pour montrer des choses comme par exemple là dans cette visualisation. Ou je montre qu'il y a eu plus de présidents républicains que démoncrates dans l'histoire des Etats-Unis. 19 présidents républicains contre 16 présidents démoncrates 
 
+
 <div class="flourish-embed flourish-hierarchy" data-src="visualisation/4874708"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 
