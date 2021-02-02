@@ -69,7 +69,7 @@ Par contre, en nettoyant, en optimiser les données comme pour le jeu de donnés
 
 Grace à tous cela j'ai pu faire différentes visualisations sur le 117th congress des Etat-Unis d'Amérique comme par exemple le nombre de senateurs, représentant républicains et démoncrate selon le 117th congress et selon les Etats. Cela donne cette visualisation suivant qui est Treemap.
 
-<div class="flourish-embed flourish-hierarchy" data-src="visualisation/5102340"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+<div class="flourish-embed flourish-hierarchy" data-src="visualisation/5159833"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
 Dans cette visualisation, on peux voir en rouge le parti républicain, en bleu le parti démocrate et les indenpendant en Jaune. là au plus au niveau on peut voir que les répresentant démocrates sont plus haut de 10 représentants en comparaison avec les représentants républicains qui sont au nombre de 212. cela fait trés peu. Et en Senat l'ecart est la plus serre, en comptant les senateurs Indepedants qui soutient les démocrates et avec la voix de la vice-président des Etat-Unis, les démocrates on la majorité à une voix au senat. Cette visualisation par le filtre permet de voir la situation entre les démocrates et les républicains dans les différents Etats. Par exemple dans l'Etat de l'Alabama on peux voir que sur 7 représentnant, il y a d'une seule représentant démocrate.
 
