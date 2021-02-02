@@ -77,7 +77,7 @@ La dans cette autre visualisation dit hierchique en cercle du 117th congrès des
 
 <div class="flourish-embed flourish-hierarchy" data-src="visualisation/5102340"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-Là on peut voir qu'il y a plus de femmes dans le parti démocrate que dans le parti républicain, par exemple sur 222 représentant démocrates, il y a 89 femmes et 133 hommes en comparaison dans le parti républicain il y a sur 212, 182 hommes et 30 femmes. On peut faire la même étude au niveau du senat entre les senatrices et les senateurs et aussi par Etats. 
+Là on peut voir qu'il y a plus de femmes dans le parti démocrate que dans le parti républicain, par exemple sur 222 représentant démocrates, il y a 89 femmes et 133 hommes en comparaison dans le parti républicain il y a sur 212, 182 hommes et 30 femmes. On peut faire la même étude au niveau du senat entre les senatrices et les senateurs et aussi par Etats. Il y a un Etat, l'Etat de Washigton ou le nombre de femme dans la représentation politique est le plus élèvé et dépasse les hommes. 
 Pour différencié les femmes et les hommes dans cette visualisation, j'ai mis les femmes en rose et les hommes en vert et j'ai garde les même couleurs pour les partis politiques.
 
 
