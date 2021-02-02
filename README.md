@@ -34,7 +34,7 @@ Cette reqûete ma données un jeu de données ci-dessus :
 
 ## La structuration des données de ce jeu de données sur les présidents.
 
-Après cette première étapes qui est la collecte des données sur Wikidata avec l'utilisation d'une requête Sparql. J'ai utilisé OpenRafine qui n'a permis de modifier, rajouter un président qui manquant dans la liste le 15ème président James Buchaman qui était pas dans la liste de wikidata, j'ai supprimé la colonne sur les femmes de président et leurs photos et  rajouter d'autres information par l'intermédaire de l'enrichissement des données réalise sur OpenRafine au niveau de la réconcilie des colonnes avec le services de Wikidata qui permet optimisation et l'ajout de nouvelles information d'ou de nouvelles colonnes réaliser par  réconciliées comme les colonnes lieu de naissance, Etat de naissance, date de naissance, les pères des présidents, la date de morts, la cause de la mort et d'autres choses comme le parti politique et la religions mais j'ai supprimer cette colonne. Tous ce Data Wrangling est montre dans deux fichier Json car pour rajouter des données j'ai du télécharge le fichier en Excel puis le modifier puis le remettre sur OpenRefine, pour voir ces fichiers voir le lien weTransfer (https://we.tl/t-6ZT5stIq8H).
+Après cette première étapes qui est la collecte des données sur Wikidata avec l'utilisation d'une requête Sparql. J'ai utilisé OpenRafine qui n'a permis de modifier, rajouter un président qui manquant dans la liste le 15ème président James Buchaman qui était pas dans la liste de wikidata, j'ai supprimé la colonne sur les femmes de président et leurs photos et  rajouter d'autres information par l'intermédaire de l'enrichissement des données réalise sur OpenRafine au niveau de la réconcilie des colonnes avec le services de Wikidata qui permet optimisation et l'ajout de nouvelles information d'ou de nouvelles colonnes réaliser par  réconciliées comme les colonnes lieu de naissance, Etat de naissance, date de naissance, les pères des présidents, la date de morts, la cause de la mort et d'autres choses comme le parti politique et la religions mais j'ai supprimer cette colonne. Tous ce Data Wrangling est montre dans deux fichier Json car pour rajouter des données j'ai du télécharge le fichier en Excel puis le modifier puis le remettre sur OpenRefine, pour voir ces fichiers voir le lien weTransfer, [lien weTransfer](https://we.tl/t-6ZT5stIq8H).
 
 ## Visualisation de l'information.
 
@@ -62,18 +62,71 @@ Ce jeu de données à était acquis par une collecte de deux jeu de données sur
 ## Acquisition des données sur le jeu de données sur le 117th congrès des Etats-Unis : 
 
 
-le jeu de données initial sur les senateurs est le suivant, c'est un jeu de données qui viens de wikidata : 
+le jeu de données initial sur les senateurs est le suivant, c'est un jeu de données qui viens de wikidata, voici la requête pour les senateurs : 
+
+```Sparql
+select ?senator ?senatorLabel ?districtLabel ?partyLabel ?genderLabel ?assumedOffice (sample(?image) as ?image) where {
+  # Get all senators
+  ?senator p:P39 ?posheld; 
+           wdt:P21 ?gender;# With position held
+           p:P102 ?partystatement. # And with a certain party
+  
+  # Get the party
+  ?partystatement ps:P102 ?party.
+  minus { ?partystatement pq:P582 ?partyEnd. } # but minus the ones the senator is no longer a member of
+  minus { ?party wdt:P361 ?partOf. } # and the 'Minnesota Democratic–Farmer–Labor Party' and such
+  
+  # Check on the position in the senate
+  ?posheld ps:P39 wd:Q4416090; # Position held is in the senate
+           pq:P768 ?district;
+           pq:P580 ?assumedOffice. # And should have a starttime
+  
+  minus { ?posheld pq:P582 ?endTime. } # But not an endtime 
+  
+  # Add an image
+  optional { ?senator wdt:P18 ?image. }
+         
+  service wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+} group by ?senator ?senatorLabel ?districtLabel ?partyLabel ?genderLabel ?assumedOffice order by ?senatorLabel
+
+```
 
 <iframe style="width: 45vw; height: 45vh; border: none;" src="https://query.wikidata.org/embed.html#select%20%3Fsenator%20%3FsenatorLabel%20%3FdistrictLabel%20%3FpartyLabel%20%3FgenderLabel%20%3FassumedOffice%20(sample(%3Fimage)%20as%20%3Fimage)%20where%20%7B%0A%20%20%23%20Get%20all%20senators%0A%20%20%3Fsenator%20p%3AP39%20%3Fposheld%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20wdt%3AP21%20%3Fgender%3B%23%20With%20position%20held%0A%20%20%20%20%20%20%20%20%20%20%20p%3AP102%20%3Fpartystatement.%20%23%20And%20with%20a%20certain%20party%0A%20%20%0A%20%20%23%20Get%20the%20party%0A%20%20%3Fpartystatement%20ps%3AP102%20%3Fparty.%0A%20%20minus%20%7B%20%3Fpartystatement%20pq%3AP582%20%3FpartyEnd.%20%7D%20%23%20but%20minus%20the%20ones%20the%20senator%20is%20no%20longer%20a%20member%20of%0A%20%20minus%20%7B%20%3Fparty%20wdt%3AP361%20%3FpartOf.%20%7D%20%23%20and%20the%20'Minnesota%20Democratic%E2%80%93Farmer%E2%80%93Labor%20Party'%20and%20such%0A%20%20%0A%20%20%23%20Check%20on%20the%20position%20in%20the%20senate%0A%20%20%3Fposheld%20ps%3AP39%20wd%3AQ4416090%3B%20%23%20Position%20held%20is%20in%20the%20senate%0A%20%20%20%20%20%20%20%20%20%20%20pq%3AP768%20%3Fdistrict%3B%0A%20%20%20%20%20%20%20%20%20%20%20pq%3AP580%20%3FassumedOffice.%20%23%20And%20should%20have%20a%20starttime%0A%20%20%0A%20%20minus%20%7B%20%3Fposheld%20pq%3AP582%20%3FendTime.%20%7D%20%23%20But%20not%20an%20endtime%20%0A%20%20%0A%20%20%23%20Add%20an%20image%0A%20%20optional%20%7B%20%3Fsenator%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20%20%20%20%20%20%20%20%0A%20%20service%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20group%20by%20%3Fsenator%20%3FsenatorLabel%20%3FdistrictLabel%20%3FpartyLabel%20%3FgenderLabel%20%3FassumedOffice%20order%20by%20%3FsenatorLabel" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
 
 
 Pour réaliser aussi la collecte des données pour les représentants du 117th congress j'ai juste modifie ce jeu de données des senateurs par wd:Q4416090 pour le poste par wd:Q13218630. Cela me permet d'avoir les représentants présent de ce 117th congrès des Etats-Unis. Ce jeu de données qui est aussi un jeu de données wikidata est un jeu de données sur les représentants. Ce jeu de données est le suivant : 
 
+```Sparql
+select ?senator ?senatorLabel ?districtLabel ?partyLabel ?genderLabel ?assumedOffice (sample(?image) as ?image) where {
+  # Get all senators
+  ?senator p:P39 ?posheld; 
+           wdt:P21 ?gender;# With position held
+           p:P102 ?partystatement. # And with a certain party
+  
+  # Get the party
+  ?partystatement ps:P102 ?party.
+  minus { ?partystatement pq:P582 ?partyEnd. } # but minus the ones the senator is no longer a member of
+  minus { ?party wdt:P361 ?partOf. } # and the 'Minnesota Democratic–Farmer–Labor Party' and such
+  
+  # Check on the position in the senate
+  ?posheld ps:P39 wd:Q13218630; # Position held is in the senate
+           pq:P768 ?district;
+           pq:P580 ?assumedOffice. # And should have a starttime
+  
+  minus { ?posheld pq:P582 ?endTime. } # But not an endtime 
+  
+  # Add an image
+  optional { ?senator wdt:P18 ?image. }
+         
+  service wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+} group by ?senator ?senatorLabel ?districtLabel ?partyLabel ?genderLabel ?assumedOffice order by ?senatorLabel
+```
+
 <iframe style="width: 45vw; height: 45vh; border: none;" src="https://query.wikidata.org/embed.html#select%20%3Fsenator%20%3FsenatorLabel%20%3FdistrictLabel%20%3FpartyLabel%20%3FgenderLabel%20%3FassumedOffice%20(sample(%3Fimage)%20as%20%3Fimage)%20where%20%7B%0A%20%20%23%20Get%20all%20senators%0A%20%20%3Fsenator%20p%3AP39%20%3Fposheld%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20wdt%3AP21%20%3Fgender%3B%23%20With%20position%20held%0A%20%20%20%20%20%20%20%20%20%20%20p%3AP102%20%3Fpartystatement.%20%23%20And%20with%20a%20certain%20party%0A%20%20%0A%20%20%23%20Get%20the%20party%0A%20%20%3Fpartystatement%20ps%3AP102%20%3Fparty.%0A%20%20minus%20%7B%20%3Fpartystatement%20pq%3AP582%20%3FpartyEnd.%20%7D%20%23%20but%20minus%20the%20ones%20the%20senator%20is%20no%20longer%20a%20member%20of%0A%20%20minus%20%7B%20%3Fparty%20wdt%3AP361%20%3FpartOf.%20%7D%20%23%20and%20the%20'Minnesota%20Democratic%E2%80%93Farmer%E2%80%93Labor%20Party'%20and%20such%0A%20%20%0A%20%20%23%20Check%20on%20the%20position%20in%20the%20senate%0A%20%20%3Fposheld%20ps%3AP39%20wd%3AQ13218630%3B%20%23%20Position%20held%20is%20in%20the%20senate%0A%20%20%20%20%20%20%20%20%20%20%20pq%3AP768%20%3Fdistrict%3B%0A%20%20%20%20%20%20%20%20%20%20%20pq%3AP580%20%3FassumedOffice.%20%23%20And%20should%20have%20a%20starttime%0A%20%20%0A%20%20minus%20%7B%20%3Fposheld%20pq%3AP582%20%3FendTime.%20%7D%20%23%20But%20not%20an%20endtime%20%0A%20%20%0A%20%20%23%20Add%20an%20image%0A%20%20optional%20%7B%20%3Fsenator%20wdt%3AP18%20%3Fimage.%20%7D%0A%20%20%20%20%20%20%20%20%20%0A%20%20service%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20group%20by%20%3Fsenator%20%3FsenatorLabel%20%3FdistrictLabel%20%3FpartyLabel%20%3FgenderLabel%20%3FassumedOffice%20order%20by%20%3FsenatorLabel" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
 
 ## La structuration des données de ce jeu de données sur le 117th congrès des Etats-Unis.
 
-Pour utiliser ces deux jeu de données et en créer un seul jeu de données, j'ai rassemble ces deux jeux de données qui sont simmillaire dans un tableau CSV avec une enrichissement au niveau du poste (représentant ou senateur). Puis je suis passer à la deuxième étapes qui est la structure des données grâce à OpenRefine d'ou le travail de datawrangling. Grâce à OpenRefine j'ai pu nettoyer les données au niveau des doublons sur certains senateurs et représentant surtout des doublons en liens avec le parti politique de la personne, la requête de wikidata mettait les parti régionalistes des démocrates et des républicains et donc j'ai du grace au fitre sur OpenRefine, j'ai pu rapidement trouver les doublons, puis faire réaliser une optimisation des données au niveau du lieu de naissance, la date de naissance, le parti politique, l'Etat ou la personne est soit la senateur ou représentant et d'autres choses. Tous celui est montre par les document Jsons suivant qui sont disponible dans des fichiers weTransfer qui sont les suivants : (https://we.tl/t-A8uwNRhthf)
+Pour utiliser ces deux jeu de données et en créer un seul jeu de données, j'ai rassemble ces deux jeux de données qui sont simmillaire dans un tableau CSV avec une enrichissement au niveau du poste (représentant ou senateur). Puis je suis passer à la deuxième étapes qui est la structure des données grâce à OpenRefine d'ou le travail de datawrangling. Grâce à OpenRefine j'ai pu nettoyer les données au niveau des doublons sur certains senateurs et représentant surtout des doublons en liens avec le parti politique de la personne, la requête de wikidata mettait les parti régionalistes des démocrates et des républicains et donc j'ai du grace au fitre sur OpenRefine, j'ai pu rapidement trouver les doublons, puis faire réaliser une optimisation des données au niveau du lieu de naissance, la date de naissance, le parti politique, l'Etat ou la personne est soit la senateur ou représentant et d'autres choses. Tous celui est montre par les document Jsons suivant qui sont disponible dans des fichiers weTransfer qui sont les suivants : [lien weTransfer](https://we.tl/t-A8uwNRhthf)
 
 Par contre, en réalisant le datawrangling sur OpenRefine, en optimiser les données comme pour le jeu de donnés sur les présidents, j'ai constaté qu'il manquant 25 représentants dans la fichier. J'ai du compléte les données à la main cette opération à était plus rapide en utilisant OpenRefine pour trouver représentants manquant selon les Etats. J'ai rajouter à la suite du télechargement du document d'Openrefine sur le 117th congress sur Excel pour rajouter les représentants qui manquant puis j'ai remis ce fichier excel sur OpenRefine et j'ai refait un datawrangling comme vous le verrai sur le document Json sur Wetransfer.
 
