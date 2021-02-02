@@ -71,9 +71,14 @@ Grace à tous cela j'ai pu faire différentes visualisations sur le 117th congre
 
 <div class="flourish-embed flourish-hierarchy" data-src="visualisation/5102340"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-Dans cette visualisation, on peux voir en rouge le parti républicain et en bleu le parti démocrate. là au plus au niveau on peut voir que les répresentant démocrates sont plus haut de 10 représentants en comparaison avec les représentants républicains qui sont au nombre de 212. cela fait trés peu. Et en Senat l'ecart est la plus serre, en comptant les senateurs Indepedants qui soutient les démocrates et avec la voix de la vice-président des Etat-Unis, les démocrates on la majorité à une voix au senat. Cette visualisation par le filtre permet de voir la situation entre les démocrates et les républicains dans les différents Etats. Par exemple dans l'Etat de l'Alabama on peux voir que sur 7 représentnant, il y a d'une seule représentant démocrate.
+Dans cette visualisation, on peux voir en rouge le parti républicain, en bleu le parti démocrate et les indenpendant en Jaune. là au plus au niveau on peut voir que les répresentant démocrates sont plus haut de 10 représentants en comparaison avec les représentants républicains qui sont au nombre de 212. cela fait trés peu. Et en Senat l'ecart est la plus serre, en comptant les senateurs Indepedants qui soutient les démocrates et avec la voix de la vice-président des Etat-Unis, les démocrates on la majorité à une voix au senat. Cette visualisation par le filtre permet de voir la situation entre les démocrates et les républicains dans les différents Etats. Par exemple dans l'Etat de l'Alabama on peux voir que sur 7 représentnant, il y a d'une seule représentant démocrate.
 
+La dans cette autre visualisation dit hierchique en cercle du 117th congrès des Etats-Unis d'Amérique, j'ai rajouté un autre analyse qui est la représentation des femmes politiciens dans ce 117th congrès selon les parti et les poste soit senatrice ou représentant et aussi selon Etats ou elle ou il siège.
 
+<div class="flourish-embed flourish-hierarchy" data-src="visualisation/5102340"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+Là on peut voir qu'il y a plus de femmes dans le parti démocrate que dans le parti républicain, par exemple sur 222 représentant démocrates, il y a 89 femmes et 133 hommes en comparaison dans le parti républicain il y a sur 212, 182 hommes et 30 femmes. On peut faire la même étude au niveau du senat entre les senatrices et les senateurs et aussi par Etats. 
+Pour différencié les femmes et les hommes dans cette visualisation, j'ai mis les femmes en rose et les hommes en vert et j'ai garde les même couleurs pour les partis politiques.
 
 
 _________________________________________________________________________________________________________________________________________________________________________________
