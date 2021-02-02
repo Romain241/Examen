@@ -81,6 +81,12 @@ Là on peut voir qu'il y a plus de femmes dans le parti démocrate que dans le p
 Pour différencié les femmes et les hommes dans cette visualisation, j'ai mis les femmes en rose et les hommes en vert et j'ai garde les même couleurs pour les partis politiques.
 
 
+Dans cette dernière visualisation, je vous montre la liste définitive des politiciens du 117th congrès des Etats-Unis d'Amérique qui est un liste ..... 
+
+<iframe title="La liste des politiciens du 117th congrès" aria-label="chart" id="datawrapper-chart-S23X1" src="https://datawrapper.dwcdn.net/S23X1/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1488"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+</script>
+
+Gràce a cette visualisation, on peux savoir qui est le plus jeune politicien du congrès et le plus ancien aussi et avoir la liste complté de la représentation du pouvoir législatif au Etats-Unis.
 _________________________________________________________________________________________________________________________________________________________________________________
 
 
